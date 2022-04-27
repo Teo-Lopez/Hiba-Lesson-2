@@ -37,17 +37,17 @@ function doSomethingAsync() {
 De este modo hemos creado una función que retorna una promesa. Igual que `Flats.find()`, ahora si alguien quisiera hacer uso de nuestra función lo tendría mucho más facil ya que hemos encapsulado la lógica dentro.
 
 ```js
-  doSomethingAsync(
+  doSomethingAsync()
     .then(result=> /*aquí result sería el mensaje de 'datos que me han pedido' */)
     .catch(error => /*aquí error sería el 'Mensaje de error informando del motivo por el que la operación no ha podido ser completada'*/)
-  )
+  
 ```
 
 ## Promise.all()
 
-`Promise.all` es un método que nos permite gestionar varias promesas que son independientes entre si, pero que necesitamos que terminen a la vez.
+`Promise.all` es un método que nos permite gestionar varias promesas que son independientes entre si, pero que necesitamos asegurarnos de que ambas han terminado.
 
-En el caso de un comparador de peliculas entre Netflix y HBO, Netflix podría tardar 5min en contestar y HBO 10min. Si las hacemos dependientes tardaría un total de 10min. Promise.all() las gestiona _a la vez_ y solo continua hasta el `.then` cuando todas se han resuelto con éxito. Recibe las promesas como un array de promesas.
+En el caso de un comparador de peliculas entre Netflix y HBO, Netflix podría tardar 5min en contestar y HBO 10min. Si las hacemos dependientes tardaría un total de 15min. Promise.all() las gestiona _a la vez_ y solo continua hasta el `.then` cuando todas se han resuelto con éxito. Recibe las promesas como un array de promesas.
 
 ## Async await
 
